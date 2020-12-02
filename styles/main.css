@@ -12,7 +12,7 @@
 
     /* --- colors --- */
     --text-gray: #3f4954;
-    --text-yellow: #fcbf49;
+    --text-yellow: #ffbe0b;
 
     /* --- gradient colors --- */
     --bg-color: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
@@ -49,10 +49,22 @@ li {
 
 
 
+
+/*-------------------------header----------------------*/
+.header {
+    background: url(../img/headerBg.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 35rem;
+}
+
+
+
+
 /*-------------------------navbar----------------------*/
 .nav {
-    background: var(--text-yellow);
-    padding: 0.2rem;
+    background: rgba(0,0,0,.5);
+    padding: .2rem .2rem .2rem 1.7rem;
     height: 0;
     min-height: 10vh;
     overflow: hidden;
@@ -60,10 +72,12 @@ li {
 }
 
 .nav .nav-brand a{
-    font-size: 1.6rem;
+    font-size: 2.3rem;
+    font-style: italic;
     padding: 1rem 0;
     display: block;
-    font-family: var(--Lexend);
+    font-family: var(--Josefin);
+    color: var(--text-yellow);
 }
 
 
@@ -81,18 +95,22 @@ li {
 .nav .toggle-collapse .toggle-icon{
     display: flex;
     justify-content: flex-end;
-    padding: 1.7rem 0;
+    padding: 1.7rem 1.7rem 1.7rem 0;
 }
 
 .nav .toggle-collapse .toggle-icon i{
     font-size: 1.4rem;
-    color: rgb(63, 60, 60);
+    color: #f8edeb;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .collapse {
     height: 35rem;
 }
-
 
 .nav .nav-item {
     display: block;
@@ -101,24 +119,122 @@ li {
 
 .nav .nav-item .nav-link{
     padding: 1.6rem 1rem;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-family: var(--Abel);
     display: flex;
     flex-direction: column;
     position: relative;
 }
 
-.nav .nav-item .nav-link:hover {
-    background-color: var(--text-yellow);
+.nav .nav-item .nav-link a{
+    display: block;
+    color: #ffffff;
+}
+
+.nav .nav-item .nav-link a:hover {
+    color: var(--text-yellow);
 }
 /*-----------------x-----navbar---------x----------------*/
 
 
+/*-------------------------title----------------------*/
+.header .title {
+    display: block;
+    width: 50%;
+    margin: 25vh auto;
+}
+
+.title h1, h2 {
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1px 1px #202122;
+    font-family: var(--Abel);
+    letter-spacing: 3px;
+    font-weight: 10;
+    padding: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.title .box {
+    display: block;
+    background: rgba(0,0,0,.5);
+}
+
+.box .areas {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    height: 120px;
+
+}
+
+.location {
+    padding: 8px 12px;
+    float: left;
+    background-color: #dfffd2;
+    color: #202122;
+    cursor: pointer;
+    font-size: 16px;
+    width: 75%;
+    height: 30%;
+    outline: none;
+}
+
+.submit {
+    padding: 8px 12px;
+    float: right;
+    text-align: center;
+    background-color: #c99119;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 18px;
+    height: 30%;
+    width: 25%;
+}
+/*---------------x----------title-----------x-----------*/
+
+
+/*-------------------------time----------------------*/
+.header .time {
+    display: block;
+    background: rgba(0,0,0,.5);
+    height: fit-content;
+    margin: 70px;
+    margin-bottom: 0;
+
+}
+
+.time h3 {
+    padding: 8px 12px;
+    text-align: center;
+    color: #ffffff;
+    font-family: var(--Abel);
+    font-weight: 10;
+    line-height: 2.5rem;
+}
+/*---------------x----------time-----------x-----------*/
+
+
+/*--------------x-----------header------------x----------*/
+
+
+
+
+
 /*----------------larger screens---------------*/
 @media only screen and (min-width: 768px) {
+    .header {
+        height: 100vh;
+        position: relative;    
+    }
+
     .nav {
-        background: var(--bg-color);
-        transition: height .5s ease-in;
+        background: #1a1919;
+        padding-right: 7rem;
+        max-height: 10vh;
+        transition: height .3s ease;
+        position: fixed;
+        width: 100%;
     }
     
     .nav .nav-menu {
@@ -133,4 +249,15 @@ li {
     .nav .nav-item {
         display: flex;
     }
+
+    .header .time {
+        display: block;
+        background: rgba(0,0,0,.5);
+        height: fit-content;
+        margin: 0 auto;
+        position: absolute;
+        bottom: 0;
+        min-width: 100vw;
+    }
+
 }
